@@ -24,27 +24,27 @@ calcula_precisao_licao(TotalLetras, TotalErros, Precisao) :-
 
 exibe_estrelas_licao(Precisao, _) :-
     Precisao < 20.0,
-    ler_arquivo("../dados/arteTxt/avaliacoes/zeroEstrela.txt"),
+    ler_arquivo("../arteTxt/avaliacoes/zeroEstrela.txt"),
     insere_espaços(68, Espaços),
     format('~sSua precisão de acertos foi de: ~2f%', [Espaços, Precisao]),
     insere_espaços(60, Espaços2),
     format('\n\n~s * Pressione Enter para voltar ao Menu de Lições *', [Espaços2]).
 exibe_estrelas_licao(Precisao, _) :-
     Precisao =< 60.0,
-    ler_arquivo("../dados/arteTxt/avaliacoes/licao/umaEstrela.txt"),
+    ler_arquivo("../arteTxt/avaliacoes/licao/umaEstrela.txt"),
     insere_espaços(66, Espaços),
     format('~sSua precisão de acertos foi de: ~2f%', [Espaços, Precisao]),
     insere_espaços(60, Espaços2),
     format('\n\n~s * Pressione Enter para voltar ao Menu de Lições *', [Espaços2]).
 exibe_estrelas_licao(Precisao, _) :-
     Precisao =< 90.0,
-    ler_arquivo("../dados/arteTxt/avaliacoes/duasEstrelas.txt"),
+    ler_arquivo("../arteTxt/avaliacoes/duasEstrelas.txt"),
     insere_espaços(66, Espaços),
     format('~sSua precisão de acertos foi de: ~2f%', [Espaços, Precisao]),
     insere_espaços(60, Espaços2),
     format('\n\n~s * Pressione Enter para voltar ao Menu de Lições *', [Espaços2]).
 exibe_estrelas_licao(Precisao, _) :-
-    ler_arquivo("../dados/arteTxt/avaliacoes/licao/tresEstrelas.txt"),
+    ler_arquivo("../arteTxt/avaliacoes/licao/tresEstrelas.txt"),
     insere_espaços(64, Espaços),
     format('~sSua precisão de acertos foi de: ~2f%', [Espaços, Precisao]),
     insere_espaços(60, Espaços2),
@@ -70,27 +70,27 @@ exibe_estrelas_desafio(Wpm, Precisao, _) :-
     (Precisao < 20.0 ; Wpm < 20),
     insere_espaços(56, Espaços),
     format('~sSua  velocidade foi de: ~w wpm com ~2f% de precisão.\n\n\n', [Espaços, Wpm, Precisao]),
-    ler_arquivo("../dados/arteTxt/avaliacoes/zeroEstrela.txt"),
+    ler_arquivo("../arteTxt/avaliacoes/zeroEstrela.txt"),
     insere_espaços(66, Espaços2),
     format('\n~s * Pressione Enter para ver o ranking *', [Espaços2]).
 exibe_estrelas_desafio(Wpm, Precisao, _) :-
     (Precisao =< 60.0 ; Wpm =< 30),
     insere_espaços(56, Espaços),
     format('~sSua  velocidade foi de: ~w wpm com ~2f% de precisão.\n\n\n', [Espaços, Wpm, Precisao]),
-    ler_arquivo("../dados/arteTxt/avaliacoes/desafio/umaEstrela.txt"),
+    ler_arquivo("../arteTxt/avaliacoes/desafio/umaEstrela.txt"),
     insere_espaços(66, Espaços2),
     format('\n~s * Pressione Enter para ver o ranking *', [Espaços2]).
 exibe_estrelas_desafio(Wpm, Precisao, _) :-
     (Precisao =< 90.0 ; Wpm =< 40),
     insere_espaços(56, Espaços),
     format('~sSua  velocidade foi de: ~w wpm com ~2f% de precisão.\n\n\n', [Espaços, Wpm, Precisao]),
-    ler_arquivo("../dados/arteTxt/avaliacoes/duasEstrelas.txt"),
+    ler_arquivo("../arteTxt/avaliacoes/duasEstrelas.txt"),
     insere_espaços(66, Espaços2),
     format('\n~s * Pressione Enter para ver o ranking *', [Espaços2]).
 exibe_estrelas_desafio(Wpm, Precisao, _) :-
     (Precisao > 90.0 ; Wpm > 40),
     insere_espaços(56, Espaços),
     format('~sSua  velocidade foi de: ~w wpm com ~2f% de precisão.\n\n\n', [Espaços, Wpm, Precisao]),
-    ler_arquivo("../dados/arteTxt/avaliacoes/desafio/tresEstrelas.txt"),
+    ler_arquivo("../arteTxt/avaliacoes/desafio/tresEstrelas.txt"),
     insere_espaços(66, Espaços2),
     format('\n~s * Pressione Enter para ver o ranking *', [Espaços2]).

@@ -13,7 +13,7 @@ import Desafio (iniciaDesafio, Desafio (UmMinuto, DoisMinutos, TresMinutos), get
 imprimeMenu :: IO()
 imprimeMenu = do
     limpaTela
-    menu <- readFile "../dados/arteTxt/menu.txt"
+    menu <- readFile "../arteTxt/menu.txt"
     putStrLn menu 
     opcaoSelecionada <- getLine
     opcoesMenuPrincipal (map toLower opcaoSelecionada)
@@ -36,7 +36,7 @@ listaLicoes = do
     putStrLn (exibeProgresso (contaLicoesConcluidas todasLicoes))
     putStrLn (exibeLicoesConcluida todasLicoes)
 
-    licoes <- readFile "../dados/arteTxt/licoes.txt"
+    licoes <- readFile "../arteTxt/licoes.txt"
     putStrLn licoes
     comandoUsuario <- getLine
     if comandoUsuario == ""
@@ -66,7 +66,7 @@ exibeLicao idLicao licoes = do
 listaDesafios :: IO ()
 listaDesafios = do
     limpaTela
-    desafios <- readFile "../dados/arteTxt/desafios.txt"
+    desafios <- readFile "../arteTxt/desafios.txt"
     putStrLn desafios
     opcao <- getLine 
     opcoesMenuDesafio (map toLower opcao)
@@ -90,14 +90,14 @@ exibeRanking = do
 exibeTutorial :: IO ()
 exibeTutorial = do
     limpaTela
-    tutorial <- readFile "../dados/arteTxt/tutorial.txt"
+    tutorial <- readFile "../arteTxt/tutorial.txt"
     putStrLn tutorial
     voltaMenuPrincipal
 
 sai :: IO()
 sai = do
     limpaTela
-    sai <- readFile "../dados/arteTxt/sair.txt"
+    sai <- readFile "../arteTxt/sair.txt"
     putStrLn $ aplicaCorInstrucao sai
     exitSuccess
 

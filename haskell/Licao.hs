@@ -78,10 +78,10 @@ avaliaLicao resultados = do
     putStrLn $ replicate 64 ' ' ++ show (totalLetras - totalErros) ++ "/" ++ show totalLetras ++ " caracteres digitados corretamente\n"
 
     licaoConcluida <- case estrelas of
-        0 -> readFile "../dados/arteTxt/avaliacoes/zeroEstrela.txt"
-        1 -> readFile "../dados/arteTxt/avaliacoes/licao/umaEstrela.txt"
-        2 -> readFile "../dados/arteTxt/avaliacoes/duasEstrelas.txt"
-        3 -> readFile "../dados/arteTxt/avaliacoes/licao/tresEstrelas.txt" 
+        0 -> readFile "../arteTxt/avaliacoes/zeroEstrela.txt"
+        1 -> readFile "../arteTxt/avaliacoes/licao/umaEstrela.txt"
+        2 -> readFile "../arteTxt/avaliacoes/duasEstrelas.txt"
+        3 -> readFile "../arteTxt/avaliacoes/licao/tresEstrelas.txt" 
     putStrLn licaoConcluida
     putStrLn $ replicate 60 ' ' ++ "* Pressione Enter para voltar ao Menu de Lições *"
 

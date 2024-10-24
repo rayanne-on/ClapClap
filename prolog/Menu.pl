@@ -8,7 +8,7 @@
 
 imprime_menu :-
     limpar_tela,
-    ler_arquivo('../dados/arteTxt/menu.txt'),
+    ler_arquivo('../arteTxt/menu.txt'),
     ler_entrada(Entrada),
     downcase_atom(Entrada, OpcaoMenu),
     opcoes_menu_principal(OpcaoMenu).
@@ -29,7 +29,7 @@ lista_licoes :-
     exibe_licoes_concluidas(Dados, LicoesConcluidas),
     writeln(""),
     writeln(LicoesConcluidas),
-    ler_arquivo('../dados/arteTxt/licoes.txt'),
+    ler_arquivo('../arteTxt/licoes.txt'),
     ler_entrada(Entrada),
     (  Entrada = "" -> imprime_menu; number_string(NumeroLicao, Entrada),
         (   NumeroLicao >= 1, NumeroLicao =< 15 -> exibe_licao(NumeroLicao))
@@ -46,7 +46,7 @@ exibe_licao(NumeroLicao) :-
     
 lista_desafios :-
     limpar_tela,
-    ler_arquivo('../dados/arteTxt/desafios.txt'),
+    ler_arquivo('../arteTxt/desafios.txt'),
     ler_entrada(Entrada),
     le_ranking(Dados),
     ( Entrada = "" -> imprime_menu; Entrada = "r" -> 
@@ -62,11 +62,11 @@ opcoes_menu_desafios(_) :- lista_desafios.
 
 exibe_tutorial:-
     limpar_tela,
-    ler_arquivo('../dados/arteTxt/tutorial.txt'),
+    ler_arquivo('../arteTxt/tutorial.txt'),
     ler_entrada(_),
     imprime_menu.
 
 sair :-
     limpar_tela,
-    ler_arquivo('../dados/arteTxt/sair.txt'),
+    ler_arquivo('../arteTxt/sair.txt'),
     halt.

@@ -452,7 +452,7 @@ formata_ranking([(Id, Nome, Wpm)|Dados], R) :-
     concatena_strings(["                                                             ", Id, " min", "   --------------- ", Nome2, " --------------- ", Wpm2, "\n", R2], R).
 
 exibe_ranking(Dados, R) :-
-    ler_arquivo("../dados/arteTxt/ranking.txt"),
+    ler_arquivo("../arteTxt/ranking.txt"),
     aplica_cor_conteudo("azul", "                                                             Desafio --------------- Nome ---------------- WPM\n", Cabecalho),
     aplica_cor_conteudo("azul", "                                                           _____________________________________________________\n\n", Linha),
     formata_ranking(Dados, LinhasFormatadas),

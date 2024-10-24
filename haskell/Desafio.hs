@@ -75,7 +75,7 @@ executaDesafio desafio tempoMVar = do
             case resultado of
                 Left _ -> do
                     limpaTela
-                    tempoEsgotado <- readFile "../dados/arteTxt/tempo.txt"
+                    tempoEsgotado <- readFile "../arteTxt/tempo.txt"
                     putStrLn tempoEsgotado
                     putStrLn "Pressione Enter para ver seu resultado."
                     string <- getLine
@@ -111,10 +111,10 @@ avaliaDesafio desafio frase string = do
     putStrLn $ replicate 64 ' ' ++ show numPalavrasCorretas ++ "/" ++ show numPalavras ++ " palavras digitadas corretamente.\n"
 
     desafioConcluido <- case estrelas of
-        0 -> readFile "../dados/arteTxt/avaliacoes/zeroEstrela.txt"
-        1 -> readFile "../dados/arteTxt/avaliacoes/desafio/umaEstrela.txt"
-        2 -> readFile "../dados/arteTxt/avaliacoes/duasEstrelas.txt"
-        3 -> readFile "../dados/arteTxt/avaliacoes/desafio/tresEstrelas.txt"
+        0 -> readFile "../arteTxt/avaliacoes/zeroEstrela.txt"
+        1 -> readFile "../arteTxt/avaliacoes/desafio/umaEstrela.txt"
+        2 -> readFile "../arteTxt/avaliacoes/duasEstrelas.txt"
+        3 -> readFile "../arteTxt/avaliacoes/desafio/tresEstrelas.txt"
 
     putStrLn desafioConcluido
     putStrLn $ replicate 66 ' ' ++ "* Pressione Enter para ver o ranking *" 
@@ -131,7 +131,7 @@ verificaRecorde tempo wpmUsuario = do
     
     if wpmUsuario > wpmRecorde then do
         limpaTela
-        arteRecorde <- readFile "../dados/arteTxt/recordRanking.txt"
+        arteRecorde <- readFile "../arteTxt/recordRanking.txt"
         putStrLn $ aplicaCorInstrucao arteRecorde
         nome <- getLine
         setDadosRanking id nome (show wpmUsuario)
